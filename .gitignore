@@ -1,0 +1,4 @@
+
+LicensePlateDetector/dl_prediction/models/cnn_chars_recognition.h5
+LicensePlateDetector/dl_prediction/models/yolov3_chars_final.weights
+LicensePlateDetector/dl_prediction/models/yolov3_plates_final.weights
