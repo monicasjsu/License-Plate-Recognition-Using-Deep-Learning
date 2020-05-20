@@ -35,9 +35,6 @@ def cnn_model():
 def get_char_data():
     data = np.array([]).reshape(0, height, width)
     labels = np.array([])
-
-    # Data in  ./LetterDataset then in a folder with label name,
-    # example : ./LetterDataset/A for A images #############
     dirs = [i[0] for i in os.walk('dataset')][1:]
     for dir in dirs:
         image_file_list = glob.glob(dir + '/*.jpg')
