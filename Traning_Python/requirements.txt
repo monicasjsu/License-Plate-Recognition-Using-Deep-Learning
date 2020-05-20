@@ -1,0 +1,11 @@
+tensorflow==1.14.0
+numpy
+opencv-python
+imutils
+Cython
+scikit-learn
+detect
+pillow
+yolo34py
+keras
+pydot
