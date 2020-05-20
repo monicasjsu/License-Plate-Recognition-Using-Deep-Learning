@@ -22,7 +22,7 @@ You can download the datasets from this [link](https://drive.google.com/drive/fo
 A few more images are also included in the dataset. We have used [LabelImg](https://github.com/tzutalin/labelImg) annotation tool to annotate license plates and the characters in the license plates.
 
 ## Annotations Conversion
-The dataset we found has annotations compatible with ImageNet. We have written a method to convert these annotations into labels required by YoloV3 training. [Link here]()
+The dataset we found has annotations compatible with ImageNet. We have written a method to convert these annotations into labels required by YoloV3 training. [Link here](Traning_Python/Yolo_LicensePlateDetection/annotations_xml_to_txt.py)
 
 ## Test Train Split
 As we have limited set of images and considering how hard it is to manually annotate these images, we have chosed to split the data into 90% for training and 10% for testing.
@@ -191,8 +191,8 @@ No. of filters= (5 + no. of classes) * 3
 
 Number of steps are calculated by calculating 80%, 90% of total batches respectively.
 
-[YoloV3_Plates.cfg](link)
-[YoloV3_Charecters.cfg](link)
+[YoloV3_Plates.cfg](Traning_Python/custom/yolov3-license-plates.cfg)
+[YoloV3_Charecters.cfg](Traning_Python/custom/yolov3_character.cfg)
 
 Final yolo.weights that we obtained are later used to predict the license plates and corresponging characters. 
 
@@ -266,7 +266,7 @@ Epoch 15/15
 0.99887323
 ```
 
-You can download all our trained yoloV3 weights and models from this follow [link](link).
+You can download all our trained yoloV3 weights and models from this follow [link](https://drive.google.com/drive/u/2/folders/1Q9HEYx6YM2bC7DRuibrJ9bfikR79Sveh).
 
 ## Transfer Learning
 We have used the weights that were trained on the Belgium cars dataset to predict the license plates of California. The model performed decently with atleast 60-70% accuracy. 
