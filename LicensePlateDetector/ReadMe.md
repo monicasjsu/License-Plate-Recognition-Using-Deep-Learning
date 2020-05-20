@@ -13,12 +13,11 @@ and make sure you download all three models and place it under the `dl_predictio
 4. Now the app should be running on your http://localhost:5000.
 
 #### **GUI Snapshots**
+![Yolo Detection and Identification](screenshots/YOLO%20_YOLO.png?raw=true "Yolo License Plate Detection and Character Identification")
 
-![Alt text]('./screenshots/YOLO_YOLO.png?raw=true "Yolo Detection and Identification")
+![Yolo Detection and Identification](screenshots/YOLO_YOLO_VIDEO.png?raw=true "Yolo License Plate Detection and Character Identification")
 
-![Alt text]('./screenshots/YOLO_YOLO_VIDEO.png?raw=true "Yolo Detection and Identification")
-
-![Alt text]('./screenshots/YOLO_CNN.png?raw=true "Yolo Detection and Identification")
+![Alt text](screenshots/YOLO%20_CNN.png?raw=true "Yolo License Plate Detection and CNN Character Identification")
 
 
 #### **Demo samples**
