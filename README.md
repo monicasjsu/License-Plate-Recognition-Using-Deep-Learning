@@ -1,4 +1,4 @@
-# DL_LicensePlateRecognition
+# Deep Learning based License Plate Recognition
 License plate recognition using Deep Learning
 
 In this project we put our best effort to train YOLOV3 and CNN for models License plates detection and identification.
@@ -13,22 +13,24 @@ There are three main modules in this project.
 
 ## Datasets
 1. We have collected images for 700 cars (Belgium based) and multiple variations and angles for each car. 
-2. We have also collected the images of license plates for these cars such that most of the image contains license plate. This enabled us to train the YoloV3 weihts for segmentation and character recognition. We have also clicked a few pictures around our place to add them to the test dataset. 
+2. We have also collected the images of license plates for these cars such that most of the image contains license plate. This enabled us to train the YoloV3 weights for segmentation and character recognition. We have also clicked a few pictures around our place to add them to the test dataset. 
 
-3. Data related to all possible characters in the License plates were also collected and perfoermed Image augumentation to perform the training on multiple permuations of each image. We had nearly 1000 images per character.
+3. Data related to all possible characters in the License plates were also collected and performed Image augmentation to perform the training on multiple permutaions of each image. We had nearly 1000 images per character.
 
 You can download the datasets from this [link](https://drive.google.com/drive/folders/1G7x2Bn7z8MKFA6PdnLFGvOWvH7DOjLQw?usp=sharing). This folder contains all three datasets for Cars, License Plates and Characters
 
 A few more images are also included in the dataset. We have used [LabelImg](https://github.com/tzutalin/labelImg) annotation tool to annotate license plates and the characters in the license plates.
 
+![LabelImg](screenshots/labelImg.png "Label Image")
+
 ## Annotations Conversion
-The dataset we found has annotations compatible with ImageNet. We have written a method to convert these annotations into labels required by YoloV3 training. [Link here]()
+The dataset we found has annotations compatible with ImageNet. We have written a method to convert these annotations into labels required by YoloV3 training. [Link here](Traning_Python/Yolo_LicensePlateDetection/annotations_xml_to_txt.py)
 
 ## Test Train Split
-As we have limited set of images and considering how hard it is to manually annotate these images, we have chosed to split the data into 90% for training and 10% for testing.
+As we have limited set of images and considering how hard it is to manually annotate these images, we have chosen to split the data into 90% for training and 10% for testing.
 
 ## Data validation
-The images we collected had a few discrepancies such as not having annoations files, mislabled annotations, incorrect annotations, etc. We have validated the dataset and corrected/removed the invalid samples.
+The images we collected had a few discrepancies such as not having annotations files, mislabeled annotations, incorrect annotations, etc. We have validated the dataset and corrected/removed the invalid samples.
 
 ## Training Environment
 We have used Amazon Linux 2 (Optimized for Deep Learning) EC2 instance for training Yolo weghts. Configuration of the box is as follows.
@@ -185,16 +187,16 @@ Saving weights to ../Yolo_CharacterSegmentation/models/yolov3_character_final.we
 ```
 
 Max batches are estimated by using the following formula
-number of anchros `number of classes * 2000`
+number of anchors `number of classes * 2000`
 
 No. of filters= (5 + no. of classes) * 3
 
 Number of steps are calculated by calculating 80%, 90% of total batches respectively.
 
-[YoloV3_Plates.cfg](link)
-[YoloV3_Charecters.cfg](link)
+[YoloV3_Plates.cfg](Traning_Python/custom/yolov3-license-plates.cfg)
+[YoloV3_Charecters.cfg](Traning_Python/custom/yolov3_character.cfg)
 
-Final yolo.weights that we obtained are later used to predict the license plates and corresponging characters. 
+Final yolo.weights that we obtained are later used to predict the license plates and corresponding characters. 
 
 ### CNN
 
@@ -266,18 +268,18 @@ Epoch 15/15
 0.99887323
 ```
 
-You can download all our trained yoloV3 weights and models from this follow [link](link).
+You can download all our trained yoloV3 weights and models from this follow [link](https://drive.google.com/drive/u/2/folders/1Q9HEYx6YM2bC7DRuibrJ9bfikR79Sveh).
 
 ## Transfer Learning
-We have used the weights that were trained on the Belgium cars dataset to predict the license plates of California. The model performed decently with atleast 60-70% accuracy. 
+We have used the weights that were trained on the Belgium cars dataset to predict the license plates of California. The model performed decently with at least 60-70% accuracy. 
 
 ## Conclusion
-We are satisfied with the result we were able to acheive with the detection and identification of the license plate numbers. 
+We are satisfied with the result we were able to achieve with the detection and identification of the license plate numbers. 
 
 We have identified the following inferences.
-1. Tranining the DarkNet was nearly impossible when we ran just on CPU. Training it on GPU enabled box woth CUDA gave us atleast 500x speed.
-2. Darknet height and width plays a major role in acheving good accuracies.
-3. Realized the importance of Image augumentation, Scaling and Graying images. 
+1. Training the DarkNet was nearly impossible when we ran just on CPU. Training it on GPU enabled box wig th CUDA gave us at least 500x speed.
+2. Darknet height and width plays a major role in achieving good accuracies.
+3. Realized the importance of Image augmentation, Scaling and Graying images. 
 4. Compared the accuracies by using darknet C compiled binaries and the TFNet wrapper by OpenCV. We had to play with scaling strategies to achieve better accuracies.
 5. Identifying the license plate numbers in taking a very long time due to the default CPU compiled OpenCV
 
@@ -285,8 +287,4 @@ We have identified the following inferences.
 1. We want to extend our project on Real Time License Plate Detection.
 2. Compare the performance improvements between YoloV3 and YoloV4 when the darknet wrapper is available.
 3. Find ways to collect datasets for the license plates of different states and countries.
-4. Apply effificient transfer learning techniques and improve the existing weights and further reduce loss.
-
-
-
-
+4. Apply efficient transfer learning techniques and improve the existing weights and further reduce loss.
