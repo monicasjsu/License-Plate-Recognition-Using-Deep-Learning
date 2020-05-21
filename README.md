@@ -4,6 +4,9 @@ License plate recognition using Deep Learning
 In this project we put our best effort to train YOLOV3 and CNN for models License plates detection and identification.
 There are three main modules in this project. 
 
+## Video Demo
+You can watch the demo of our project from [here](https://drive.google.com/drive/u/1/folders/1JKOd7scInjmRnwaFD3pxZRCvDaYpGoDy)
+
 ## Approach
 1. License plate detection using the YoloV3 weights that we trained specifically for this project. More details about this will be discussed later.
 2. Segmentation of the plate by using two approaches
